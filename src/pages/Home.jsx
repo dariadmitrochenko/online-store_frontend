@@ -30,7 +30,7 @@ const Home = () => {
       <section className="py-16">
         <div className="flex-1 text-center mb-10">
           <h1 className="text-[26px] font-medium mb-2 mx-auto">
-            Today's selection
+          Choose your 1/4th
           </h1>
         </div>
         <div className="container mx-auto">

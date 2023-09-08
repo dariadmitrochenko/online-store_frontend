@@ -13,7 +13,7 @@ const Hero = () => {
           <div>
             <div className="text-[65px] leading-[1.1] font-light my-6">Don't wait for your Adderall prescription refill</div>
             <h1 className="text-[30px] mt-20">Discover the best strain for ADHD</h1>
-            <Link className="hover:underline" to='{/}'>LEARN MORE</Link>
+            <Link className="hover:underline" to='{product/13}'>LEARN MORE</Link>
           </div>
         </div>
         {/* img */}
