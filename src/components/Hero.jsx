@@ -2,7 +2,7 @@ import React from "react";
 //import images
 import Cannabis from "../img/cannabis.svg";
 import { Link } from "react-router-dom";
-import { CartContext } from "../contexts/CartContext";
+
 
 const Hero = () => {
   return (
@@ -11,9 +11,9 @@ const Hero = () => {
         {/* text */}
         <div className="flex flex-col justify-center lg:ml-8">
           <div>
-            <div className="text-[65px] leading-[1.1] font-light my-6">Don't wait for your Adderall prescription refill</div>
+            <div className="text-[65px] leading-[1.1] font-light my-6">Don&apos;t wait for your Adderall prescription refill</div>
             <h1 className="text-[30px] mt-20">Discover the best strain for ADHD</h1>
-            <Link className="hover:underline" to='{product/13}'>LEARN MORE</Link>
+            <Link className="hover:underline" to={`/product/${13}`}>LEARN MORE</Link>
           </div>
         </div>
         {/* img */}

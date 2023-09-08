@@ -17,7 +17,7 @@ const CartProvider = ({ children }) => {
       return accumulator + currentItem.price * currentItem.amount;
     }, 0);
     setTotal(total);
-  });
+  },[cart]);
 
   // update item amount
   useEffect(() => {
@@ -34,7 +34,7 @@ const CartProvider = ({ children }) => {
     const cartItem = cart.find((item) => {
       return item.id === id;
     });
-    // if item is alread in cart
+    // if item is already in cart
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.id === id) {
