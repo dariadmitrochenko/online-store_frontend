@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 //import icons
 import { IoIosArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
@@ -11,9 +11,21 @@ import { SidebarContext } from "../contexts/SidebarContext";
 // import cart context
 import { CartContext } from "../contexts/CartContext";
 
+
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
+
+  //close sidebar when moving to another page
+  const navigate = useNavigate();
+  useEffect(() => {
+    const sidebarHidden = () => {
+      if (isOpen && navigate) {
+        handleClose();
+      }
+    };
+    return () => sidebarHidden();
+  });
   return (
     <div
       className={`${

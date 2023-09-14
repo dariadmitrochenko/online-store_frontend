@@ -25,7 +25,7 @@ const Home = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className="mx-4 sm:mx-0">
       <Hero />
       <section className="py-16">
         <div className="flex-1 text-center mb-10">

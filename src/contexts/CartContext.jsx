@@ -1,23 +1,23 @@
+/* eslint-disable react/prop-types */
 import React, { createContext, useState, useEffect } from "react";
-import CartItem from "../components/CartItem";
+//import CartItem from "../components/CartItem";
 
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   // cart state
   const [cart, setCart] = useState([]);
-
   // item amount state
   const [itemAmount, setItemAmount] = useState(0);
   // update price total
   const [total, setTotal] = useState(0);
-
+  //cart reducer
   useEffect(() => {
     const total = cart.reduce((accumulator, currentItem) => {
       return accumulator + currentItem.price * currentItem.amount;
     }, 0);
     setTotal(total);
-  },[cart]);
+  }, [cart]);
 
   // update item amount
   useEffect(() => {
@@ -91,6 +91,17 @@ const CartProvider = ({ children }) => {
       }
     }
   };
+
+  //save cart items to local storage and persist it
+  useEffect(() => {
+    const myCart = window.localStorage.getItem("MY_CART");
+    setCart(JSON.parse(myCart));
+    console.log(myCart);
+  }, []);
+  
+  useEffect(() => {
+    window.localStorage.setItem("MY_CART", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider
