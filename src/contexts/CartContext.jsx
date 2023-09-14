@@ -96,12 +96,12 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     const myCart = window.localStorage.getItem("MY_CART");
     setCart(JSON.parse(myCart));
-    console.log(myCart);
   }, []);
   
   useEffect(() => {
     window.localStorage.setItem("MY_CART", JSON.stringify(cart));
   }, [cart]);
+
 
   return (
     <CartContext.Provider

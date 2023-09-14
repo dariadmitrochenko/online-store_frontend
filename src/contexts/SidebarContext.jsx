@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState} from 'react';
 
 // create context
 export const SidebarContext = createContext();
@@ -12,9 +12,13 @@ const SidebarProvider = ({ children }) => {
     setIsOpen(false);
   };
 
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
 
 
-  return <SidebarContext.Provider value={{ isOpen, setIsOpen, handleClose }}>{children}</SidebarContext.Provider>;
+
+  return <SidebarContext.Provider value={{ isOpen, setIsOpen, handleClose, handleOpen }}>{children}</SidebarContext.Provider>;
 };
 
 export default SidebarProvider;

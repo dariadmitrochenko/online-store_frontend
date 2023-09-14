@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from "react";
-import { Link, useActionData } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import icons
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
 //import cart context
