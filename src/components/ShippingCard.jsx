@@ -3,7 +3,7 @@ import React from "react";
 const ShippingCard = () => {
   return (
     <div>
-      <div className="py-16 px-0 md:px-6 2xl:px-0 justify-center items-center 2xl:mx-auto 2xl:container">
+      <div className="py-16 px-4 md:px-6 2xl:px-0 justify-center items-center 2xl:mx-auto 2xl:container">
         <div>
           <div className="flex flex-col p-8 bg-gray-100 dark:bg-gray-800 xl:w-3/5">
             <div className="mt-0.3">
